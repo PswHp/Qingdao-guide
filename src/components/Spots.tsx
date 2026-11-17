@@ -1,5 +1,6 @@
 import { spots } from '../data/content'
 import SectionTitle from './SectionTitle'
+import PhotoCredit from './PhotoCredit'
 
 export default function Spots() {
   return (
@@ -8,17 +9,16 @@ export default function Spots() {
         <SectionTitle eyebrow="MUST VISIT" title="꼭 가봐야 할 명소" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {spots.map((spot) => (
-            <article key={spot.name} className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-lg">
-              <div className={`${spot.bg} relative aspect-[4/3]`}>
-                {spot.image && (
-                  <img
-                    src={spot.image}
-                    alt={spot.name}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
-                )}
+            <article key={spot.name} className="group overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-lg">
+              <div className={`${spot.bg} relative aspect-[4/3] overflow-hidden`}>
+                <img
+                  src={spot.photo.src}
+                  alt={spot.photo.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
                 <span className="absolute top-3 left-3 rounded bg-white/90 px-2 py-1 text-xs font-bold">{spot.tag}</span>
+                <PhotoCredit credit={spot.photo.credit} />
               </div>
               <div className="p-5">
                 <h3 className="text-lg font-bold">

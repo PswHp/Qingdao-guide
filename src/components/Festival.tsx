@@ -1,3 +1,6 @@
+import { festivalPhoto } from '../data/content'
+import PhotoCredit from './PhotoCredit'
+
 export default function Festival() {
   return (
     <section id="festival" className="py-24">
@@ -16,8 +19,14 @@ export default function Festival() {
               <li>🎟️ 입장: 행사별 상이</li>
             </ul>
           </div>
-          <div className="grid min-h-[260px] place-items-center bg-white/20 text-8xl" aria-hidden>
-            🎉
+          <div className="relative min-h-[280px] bg-slate-900">
+            <img
+              src={festivalPhoto.src}
+              alt={festivalPhoto.alt}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_35%]"
+            />
+            <PhotoCredit credit={festivalPhoto.credit} />
           </div>
         </div>
       </div>
