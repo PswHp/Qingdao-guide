@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>칭다오 여행 가이드</title>
+  <meta name="description" content="바다와 맥주의 도시, 칭다오 여행 정보 — 명소, 음식, 축제, 여행 팁" />
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sea: { 50: '#eef8fb', 100: '#d4eef5', 500: '#1b8fb0', 600: '#13708c', 700: '#0f5a71', 900: '#0b3443' },
+            roof: { 500: '#c8452f', 600: '#a83824' },
+            sand: { 50: '#fbf8f2', 100: '#f4ecdc' },
+          },
+          fontFamily: { sans: ['Pretendard', 'Noto Sans KR', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" />
+  <style>
+    .wave { background: radial-gradient(120% 60% at 50% 120%, rgba(255,255,255,.18), transparent 60%); }
+    .ph-1 { background: linear-gradient(135deg, #1b8fb0, #0b3443); }
+    .ph-2 { background: linear-gradient(135deg, #c8452f, #f0a35e); }
+    .ph-3 { background: linear-gradient(135deg, #3f7d4e, #a8c97f); }
+    .ph-4 { background: linear-gradient(135deg, #d9a521, #f6e2a1); }
+    .ph-5 { background: linear-gradient(135deg, #6b5ca5, #b7a9e0); }
+    .ph-6 { background: linear-gradient(135deg, #13708c, #8fd3e4); }
+  </style>
+</head>
+<body class="bg-sand-50 text-slate-800 font-sans antialiased">
+
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200/60">
+    <div class="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-black text-xl text-sea-700">
+        <span class="inline-block w-8 h-8 rounded-lg bg-roof-500 text-white grid place-items-center text-sm">青</span>
+        QINGDAO
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#spots" class="hover:text-sea-600">명소</a>
+        <a href="#food" class="hover:text-sea-600">음식</a>
+        <a href="#festival" class="hover:text-sea-600">축제</a>
+        <a href="#tips" class="hover:text-sea-600">여행 팁</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button class="text-xs font-semibold border border-slate-300 rounded-full px-3 py-1">KO · 中 · EN</button>
+        <button class="md:hidden p-2" aria-label="메뉴">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative pt-16 min-h-[88vh] flex items-center ph-1 text-white overflow-hidden">
+    <div class="absolute inset-0 wave"></div>
+    <div class="absolute right-[-10%] bottom-[-20%] w-[60vw] h-[60vw] rounded-full bg-white/5"></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-20">
+      <p class="text-sea-100 font-semibold tracking-widest text-sm mb-4">青岛 · QINGDAO · CHINA</p>
+      <h1 class="text-4xl sm:text-6xl font-black leading-tight">
+        붉은 지붕과 푸른 바다,<br />
+        <span class="text-amber-300">맥주의 도시</span> 칭다오
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-sea-100">
+        인천에서 비행기로 약 1시간 30분. 유럽풍 거리와 해안 산책로, 신선한 해산물과
+        갓 뽑은 생맥주가 기다리는 가장 가까운 바다 도시로 떠나보세요.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="#spots" class="rounded-full bg-white text-sea-700 font-bold px-6 py-3 hover:bg-sea-50">명소 둘러보기</a>
+        <a href="#tips" class="rounded-full border border-white/60 font-bold px-6 py-3 hover:bg-white/10">여행 준비하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick info -->
+  <section class="relative -mt-12 z-10">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-white rounded-2xl shadow-xl p-4 md:p-6">
+        <div class="p-3">
+          <p class="text-xs text-slate-500">현재 날씨</p>
+          <p class="text-2xl font-bold mt-1">☀️ 12°C</p>
+          <p class="text-xs text-slate-400 mt-1">Hono API 연동 예정</p>
+        </div>
+        <div class="p-3">
+          <p class="text-xs text-slate-500">환율</p>
+          <p class="text-2xl font-bold mt-1">1元 ≈ 195원</p>
+          <p class="text-xs text-slate-400 mt-1">예시 값</p>
+        </div>
+        <div class="p-3">
+          <p class="text-xs text-slate-500">시차</p>
+          <p class="text-2xl font-bold mt-1">−1시간</p>
+          <p class="text-xs text-slate-400 mt-1">한국보다 1시간 늦음</p>
+        </div>
+        <div class="p-3">
+          <p class="text-xs text-slate-500">비행 시간</p>
+          <p class="text-2xl font-bold mt-1">약 1h 30m</p>
+          <p class="text-xs text-slate-400 mt-1">인천 → 칭다오 자오둥</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spots -->
+  <section id="spots" class="py-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-roof-500 font-bold text-sm tracking-widest">MUST VISIT</p>
+          <h2 class="text-3xl sm:text-4xl font-black mt-2">꼭 가봐야 할 명소</h2>
+        </div>
+        <a href="#" class="hidden sm:inline text-sm font-semibold text-sea-600 hover:underline">전체 보기 →</a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- card -->
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="ph-1 aspect-[4/3] relative">
+            <span class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-2 py-1 rounded">해안</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg">잔교 <span class="text-slate-400 font-normal text-sm">栈桥</span></h3>
+            <p class="text-sm text-slate-600 mt-2">1890년대에 지어진 칭다오의 상징. 바다 위로 뻗은 다리 끝 회란각에서 바라보는 노을이 일품입니다.</p>
+          </div>
+        </article>
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="ph-2 aspect-[4/3] relative">
+            <span class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-2 py-1 rounded">거리</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg">팔대관 <span class="text-slate-400 font-normal text-sm">八大关</span></h3>
+            <p class="text-sm text-slate-600 mt-2">각국 양식의 별장이 모인 가로수길. 붉은 지붕과 녹음이 어우러진 산책 명소입니다.</p>
+          </div>
+        </article>
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="ph-3 aspect-[4/3] relative">
+            <span class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-2 py-1 rounded">자연</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg">라오산 <span class="text-slate-400 font-normal text-sm">崂山</span></h3>
+            <p class="text-sm text-slate-600 mt-2">바다와 맞닿은 도교의 명산. 기암괴석과 사찰, 라오산 광천수로 유명합니다.</p>
+          </div>
+        </article>
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="ph-4 aspect-[4/3] relative">
+            <span class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-2 py-1 rounded">체험</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg">칭다오 맥주 박물관 <span class="text-slate-400 font-normal text-sm">啤酒博物馆</span></h3>
+            <p class="text-sm text-slate-600 mt-2">1903년 문을 연 양조장을 개조한 박물관. 견학 후 갓 뽑은 원액 맥주를 시음할 수 있습니다.</p>
+          </div>
+        </article>
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="ph-5 aspect-[4/3] relative">
+            <span class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-2 py-1 rounded">야경</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg">5·4 광장 <span class="text-slate-400 font-normal text-sm">五四广场</span></h3>
+            <p class="text-sm text-slate-600 mt-2">붉은 '오월의 바람' 조형물이 서 있는 신시가지 광장. 밤마다 펼쳐지는 빌딩 조명쇼가 볼거리입니다.</p>
+          </div>
+        </article>
+        <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="ph-6 aspect-[4/3] relative">
+            <span class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-2 py-1 rounded">전망</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg">소어산 공원 <span class="text-slate-400 font-normal text-sm">小鱼山</span></h3>
+            <p class="text-sm text-slate-600 mt-2">구시가지의 붉은 지붕과 바다를 한눈에 내려다볼 수 있는 전망 포인트입니다.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food -->
+  <section id="food" class="py-24 bg-white">
+    <div class="mx-auto max-w-6xl px-4">
+      <p class="text-roof-500 font-bold text-sm tracking-widest">LOCAL TASTE</p>
+      <h2 class="text-3xl sm:text-4xl font-black mt-2 mb-10">칭다오에서 꼭 먹어야 할 것</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-2xl bg-sand-100 p-6 text-center">
+          <div class="text-5xl">🍺</div>
+          <h3 class="font-bold mt-4">칭다오 생맥주</h3>
+          <p class="text-xs text-slate-500 mt-1">비닐봉지에 담아 파는 현지 스타일</p>
+        </div>
+        <div class="rounded-2xl bg-sand-100 p-6 text-center">
+          <div class="text-5xl">🐚</div>
+          <h3 class="font-bold mt-4">라차 볶음</h3>
+          <p class="text-xs text-slate-500 mt-1">매콤한 바지락 볶음, 맥주 안주 1순위</p>
+        </div>
+        <div class="rounded-2xl bg-sand-100 p-6 text-center">
+          <div class="text-5xl">🦐</div>
+          <h3 class="font-bold mt-4">해산물 요리</h3>
+          <p class="text-xs text-slate-500 mt-1">시장에서 골라 바로 조리해 먹는 재미</p>
+        </div>
+        <div class="rounded-2xl bg-sand-100 p-6 text-center">
+          <div class="text-5xl">🍢</div>
+          <h3 class="font-bold mt-4">양꼬치 · 꼬치구이</h3>
+          <p class="text-xs text-slate-500 mt-1">야시장과 맥주 거리의 단골 메뉴</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Festival -->
+  <section id="festival" class="py-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="rounded-3xl ph-4 overflow-hidden grid md:grid-cols-2">
+        <div class="p-8 sm:p-12 text-slate-900">
+          <p class="font-bold text-sm tracking-widest text-roof-600">FESTIVAL</p>
+          <h2 class="text-3xl sm:text-4xl font-black mt-2">칭다오 국제 맥주 축제</h2>
+          <p class="mt-4 text-slate-800">
+            매년 여름(주로 7~8월) 열리는 아시아 최대 규모의 맥주 축제. 세계 각국의 맥주와 공연,
+            불꽃놀이가 도시 전체를 축제 분위기로 물들입니다.
+          </p>
+          <ul class="mt-6 space-y-2 text-sm font-medium">
+            <li>📅 기간: 매년 여름 (일정은 공식 발표 확인)</li>
+            <li>📍 장소: 시북구·서해안 신구 맥주성 일대</li>
+            <li>🎟️ 입장: 행사별 상이</li>
+          </ul>
+          <a href="#" class="inline-block mt-8 rounded-full bg-slate-900 text-white font-bold px-6 py-3 hover:bg-slate-700">축제 정보 자세히</a>
+        </div>
+        <div class="min-h-[260px] bg-white/20 grid place-items-center text-8xl">🎉</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section id="tips" class="py-24 bg-sea-900 text-white">
+    <div class="mx-auto max-w-6xl px-4">
+      <p class="text-amber-300 font-bold text-sm tracking-widest">TRAVEL TIPS</p>
+      <h2 class="text-3xl sm:text-4xl font-black mt-2 mb-10">떠나기 전 체크리스트</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+          <div class="text-3xl">🛂</div>
+          <h3 class="font-bold mt-3">입국 · 비자</h3>
+          <p class="text-sm text-sea-100 mt-2">비자 정책은 자주 바뀌니 출국 전 대사관 공지를 꼭 확인하세요.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+          <div class="text-3xl">💳</div>
+          <h3 class="font-bold mt-3">결제</h3>
+          <p class="text-sm text-sea-100 mt-2">알리페이·위챗페이가 기본입니다. 해외 카드를 미리 연동해 두세요.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+          <div class="text-3xl">🚇</div>
+          <h3 class="font-bold mt-3">교통</h3>
+          <p class="text-sm text-sea-100 mt-2">공항에서 시내까지 지하철 8호선으로 연결됩니다. 택시 앱 디디(DiDi)도 편리합니다.</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+          <div class="text-3xl">📶</div>
+          <h3 class="font-bold mt-3">인터넷</h3>
+          <p class="text-sm text-sea-100 mt-2">일부 해외 서비스 접속이 제한되니 로밍이나 eSIM을 준비하세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-12">
+    <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between gap-6 text-sm">
+      <div>
+        <p class="font-black text-white text-lg">QINGDAO GUIDE</p>
+        <p class="mt-2">바다와 맥주의 도시, 칭다오 여행 가이드</p>
+      </div>
+      <div class="flex gap-6">
+        <a href="#spots" class="hover:text-white">명소</a>
+        <a href="#food" class="hover:text-white">음식</a>
+        <a href="#festival" class="hover:text-white">축제</a>
+        <a href="#tips" class="hover:text-white">여행 팁</a>
+      </div>
+      <p>© 2026 Qingdao Guide</p>
+    </div>
+  </footer>
+
+</body>
+</html>

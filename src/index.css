@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans KR", system-ui, sans-serif;
+  --color-sea-50: #eef8fb;
+  --color-sea-100: #d4eef5;
+  --color-sea-500: #1b8fb0;
+  --color-sea-600: #13708c;
+  --color-sea-700: #0f5a71;
+  --color-sea-900: #0b3443;
+  --color-roof-500: #c8452f;
+  --color-roof-600: #a83824;
+  --color-sand-50: #fbf8f2;
+  --color-sand-100: #f4ecdc;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  @apply bg-sand-50 font-sans text-slate-800 antialiased;
+}
+
+/* 실제 사진이 준비되기 전까지 쓰는 그라데이션 자리표시 */
+.ph-sea    { background: linear-gradient(135deg, #1b8fb0, #0b3443); }
+.ph-roof   { background: linear-gradient(135deg, #c8452f, #f0a35e); }
+.ph-forest { background: linear-gradient(135deg, #3f7d4e, #a8c97f); }
+.ph-beer   { background: linear-gradient(135deg, #d9a521, #f6e2a1); }
+.ph-night  { background: linear-gradient(135deg, #6b5ca5, #b7a9e0); }
+.ph-sky    { background: linear-gradient(135deg, #13708c, #8fd3e4); }
