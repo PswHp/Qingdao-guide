@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { navItems } from '../data/content'
+import AuthButton from './AuthButton'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -19,7 +20,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <button className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold">KO · 中 · EN</button>
+          <AuthButton />
           <button
             className="p-2 md:hidden"
             aria-label="메뉴"
