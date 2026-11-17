@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://qingdao-guide-2h4.pages.dev/sitemap.xml
