@@ -23,13 +23,15 @@ export default function AuthButton() {
     if (!user) renderButton(buttonRef.current, compact)
   }, [user, ready, compact, renderButton])
 
+  // key 를 다르게 줘서 로그인/로그아웃 때 칸을 통째로 새로 만듦.
+  // (같은 div 를 재사용하면 구글 스크립트가 그려 넣은 버튼이 React 가 모르는 채로 남아 계속 보임)
   if (!user) {
     // 구글 스크립트가 버튼을 그리기 전까지 같은 크기의 자리 확보
-    return <div ref={buttonRef} className="flex min-h-8 min-w-8 items-center" />
+    return <div key="login" ref={buttonRef} className="flex min-h-8 min-w-8 items-center" />
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div key="profile" className="flex items-center gap-2">
       {user.picture ? (
         <img src={user.picture} alt="" referrerPolicy="no-referrer" className="h-8 w-8 rounded-full" />
       ) : (
